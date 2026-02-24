@@ -3,6 +3,7 @@
   --color-green: #34c94b;
   --color-primary: #34c94b;
   --color-white: #ffffff;
+  --bg-black: #121212;
   
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -33,6 +34,7 @@ body {
   place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-black);
 }
 
 h1 {

@@ -1,0 +1,45 @@
+.wrapper {
+  width: 160px;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bottomSection {
+  background-color: #ffffff;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.chip {
+  background-color: black !important;
+  color: white !important;
+  font-size: 11px !important;
+  height: 24px !important;
+  border-radius: 20px !important;
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
