@@ -24,15 +24,18 @@ function Carousel({ data = [], renderItem }) {
           swiper.params.navigation.prevEl = prevRef.current;
           swiper.params.navigation.nextEl = nextRef.current;
         }}
-        // navigation={{
-        //   prevEl: prevRef.current,
-        //   nextEl: nextRef.current,
-        // }}
         breakpoints={{
           320: { slidesPerView: 1.5 },
           480: { slidesPerView: 3 },
           768: { slidesPerView: 5 },
           1024: { slidesPerView: 7 },
+        }}
+        onSwiper={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+
+          swiper.navigation.init();
+          swiper.navigation.update();
         }}
       >
         {data.map((item) => (
