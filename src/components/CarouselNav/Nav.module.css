@@ -1,0 +1,37 @@
+.nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+:global(.swiper-button-prev-custom) {
+  left: -10px;
+}
+
+:global(.swiper-button-next-custom) {
+  right: -10px;
+}
+
+.nav svg {
+  width: 16px;
+  height: 16px;
+}

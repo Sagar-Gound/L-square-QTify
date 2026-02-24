@@ -1,0 +1,27 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.navLeft,
+.navRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(100%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navLeft {
+  left: 0px;
+}
+
+.navRight {
+  right: 0px;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}

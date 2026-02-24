@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Section.module.css";
 import axios from "axios";
 import Card from "../Card/Card";
+import { Container } from "@mui/material";
 
 function Section({ title, apiEndpoint }) {
   const [data, setData] = useState([]);
@@ -22,30 +23,32 @@ function Section({ title, apiEndpoint }) {
 
   return (
     <div className={styles.section}>
-      <div className={styles.header}>
-        <h2>{title}</h2>
-        <button
-          className={styles.toggleBtn}
-          onClick={() => setCollapsed(!collapsed)}
-        >
-          {collapsed ? "Show all" : "Collapse"}
-        </button>
-      </div>
+      <Container maxWidth="xl">
+        <div className={styles.header}>
+          <h2>{title}</h2>
+          <button
+            className={styles.toggleBtn}
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            {collapsed ? "Show all" : "Collapse"}
+          </button>
+        </div>
 
-      <div
-        className={`${styles.cardsContainer} ${
-          collapsed ? styles.collapsed : ""
-        }`}
-      >
-        {data.map((album) => (
-          <Card
-            key={album.id}
-            image={album.image}
-            title={album.title}
-            follows={album.follows}
-          />
-        ))}
-      </div>
+        <div
+          className={`${styles.cardsContainer} ${
+            collapsed ? styles.collapsed : ""
+          }`}
+        >
+          {data.map((album) => (
+            <Card
+              key={album.id}
+              image={album.image}
+              title={album.title}
+              follows={album.follows}
+            />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 }
