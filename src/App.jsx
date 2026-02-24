@@ -1,8 +1,8 @@
 import "./App.css";
-import Card from "./components/Card/Card";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import NewAlbums from "./components/NewAlbums/NewAlbums";
+import Songs from "./components/Songs/Songs";
 import TopAlbums from "./components/TopAlbums/TopAlbums";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <Hero />
       <TopAlbums />
       <NewAlbums />
+      <Songs />
     </>
   );
 }

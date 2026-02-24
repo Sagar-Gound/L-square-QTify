@@ -4,7 +4,7 @@ import RightNav from "../../assets/right-nav.svg";
 const RightNavButton = () => {
   return (
     <div className={styles.button}>
-     <img src={RightNav} alt="swiper left" />
+      <img src={RightNav} alt="swiper right" />
     </div>
   );
 };

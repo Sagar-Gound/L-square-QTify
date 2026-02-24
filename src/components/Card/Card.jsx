@@ -1,7 +1,10 @@
 import styles from "./Card.module.css";
 import Chip from "@mui/material/Chip";
 
-function Card({ image, title, follows }) {
+function Card({ image, title, follows, likes, type = "album", count }) {
+  const chipValue = count ?? (type === "song" ? likes : follows);
+  const chipLabel = type === "song" ? `${chipValue} Likes` : `${chipValue} Follows`;
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
@@ -11,7 +14,7 @@ function Card({ image, title, follows }) {
 
         <div className={styles.bottomSection}>
           <Chip
-            label={`${follows} Follows`}
+            label={chipLabel}
             size="small"
             className={styles.chip}
           />

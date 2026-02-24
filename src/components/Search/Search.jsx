@@ -1,10 +1,7 @@
-import React from "react";
 import styles from "./Search.module.css";
 import SearchIcon from "../../assets/search-icon.svg";
-// import useAutocomplete from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
-// import { truncate } from "../../helpers/helpers";
-import { Tooltip, useAutocomplete } from "@mui/material";
+import { useAutocomplete } from "@mui/material";
 import { useNavigate } from "react-router";
 
 const Listbox = styled("ul")(({ theme }) => ({
@@ -54,9 +51,7 @@ function Search({ searchData, placeholder }) {
   const navigate = useNavigate();
   const onSubmit = (e, value) => {
     e.preventDefault();
-    console.log(value);
     navigate(`/album/${value.slug}`);
-    //Process form data, call API, set state etc.
   };
 
   return (
@@ -78,7 +73,6 @@ function Search({ searchData, placeholder }) {
         </div>
         <div>
           <button className={styles.searchButton} type="submit">
-            {/* <SearchIcon /> */}
             <img src={SearchIcon} alt="search" />
           </button>
         </div>
@@ -86,12 +80,6 @@ function Search({ searchData, placeholder }) {
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
           {groupedOptions.map((option, index) => {
-            // console.log(option);
-            const artists = option.songs.reduce((accumulator, currentValue) => {
-              accumulator.push(...currentValue.artists);
-              return accumulator;
-            }, []);
-
             return (
               <li
                 className={styles.listElement}
@@ -100,9 +88,7 @@ function Search({ searchData, placeholder }) {
                 <div>
                   <p className={styles.albumTitle}>{option.title}</p>
 
-                  <p className={styles.albumArtists}>
-                    {/* {truncate(artists.join(", "), 40)} */}
-                  </p>
+                  <p className={styles.albumArtists}></p>
                 </div>
               </li>
             );
