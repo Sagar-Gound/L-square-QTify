@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 
 function TopAlbums() {
   const [albums, setAlbums] = useState([]);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   useEffect(() => {
     fetch("https://qtify-backend.labs.crio.do/albums/top")
